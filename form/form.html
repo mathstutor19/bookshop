@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/form.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <main>
+      <div class="container">
+        <div class="title">Registration</div>
+        <div class="content">
+          <form action="#">
+            <div class="user-details">
+              <div class="input-box">
+                <label class="details">Name</label>
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="Enter your name"
+                  required
+                />
+                <p class="error error__name"></p>
+              </div>
+              <div class="input-box">
+                <label class="details">Surname </label>
+                <input type="text" placeholder="Enter your Surname" required />
+              </div>
+              <div class="input-box">
+                <label class="details"></label>
+                <label class="details">Delivery date</label>
+                <input type="date" placeholder="Enter your email" required />
+              </div>
+              <div class="input-box">
+                <label class="details">Street</label>
+                <input type="text" placeholder="Enter your Street" required />
+              </div>
+              <div class="input-box">
+                <label class="details">House number</label>
+                <input
+                  type="number"
+                  placeholder="Enter your House number"
+                  required
+                />
+              </div>
+              <div class="input-box">
+                <label class="details">Flat number</label>
+                <input
+                  type="text"
+                  placeholder="Confirm your Flat number"
+                  required
+                />
+              </div>
+              <div class="input-radio-box">
+                <p>Choose the payment type</p>
+                <div>
+                  <div>
+                    <label for="html">Cash</label>
+                    <input
+                      type="radio"
+                      id="cash"
+                      name="fav_language"
+                      value="Cash "
+                    />
+                  </div>
+                  <div>
+                    <label for="css">Card</label>
+                    <input
+                      type="radio"
+                      id="Card"
+                      name="fav_language"
+                      value="CSS"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="input-gift-box">
+                <p>Choose 2 gifts:</p>
+                <div>
+                  <div style="display: flex">
+                    <input
+                      type="checkbox"
+                      id="vehicle1"
+                      name="vehicle1"
+                      value="Bike"
+                    />
+                    <label for="vehicle1"> Pack as a gift,</label>
+                  </div>
+                  <div>
+                    <input
+                      type="checkbox"
+                      id="vehicle2"
+                      name="vehicle2"
+                      value="Car"
+                    />
+                    <label for="vehicle2"> Add postcard,</label>
+                  </div>
+                  <div>
+                    <input
+                      type="checkbox"
+                      id="vehicle3"
+                      name="vehicle3"
+                      value="Boat"
+                    />
+                    <label for="vehicle3">
+                      Provide 2% discount to the next time,</label
+                    >
+                  </div>
+                  <div>
+                    <input
+                      type="checkbox"
+                      id="vehicle3"
+                      name="vehicle3"
+                      value="Boat"
+                    />
+                    <label for="vehicle4"> Branded pen or pencil</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="gender-details">
+              <input type="radio" name="gender" id="dot-1" />
+              <input type="radio" name="gender" id="dot-2" />
+              <input type="radio" name="gender" id="dot-3" />
+              <span class="gender-title">Gender</span>
+              <div class="category">
+                <label for="dot-1">
+                  <span class="dot one"></span>
+                  <span class="gender">Male</span>
+                </label>
+                <label for="dot-2">
+                  <span class="dot two"></span>
+                  <span class="gender">Female</span>
+                </label>
+                <label for="dot-3">
+                  <span class="dot three"></span>
+                  <span class="gender">Prefer not to say</span>
+                </label>
+              </div>
+            </div> -->
+
+            <div class="button">
+              <input type="submit" value="Register" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <!-- <form name="Form" onsubmit="return validateForm()">
+            <h2>Registration Form</h2>
+
+
+            <div class="box">
+                <label>Mobile Number</label>
+                <input type="text" name="mobile" maxlength="10" id="mobile">
+                <div class="error" id="mobileErr"></div>
+            </div>
+            <div class="box">
+                <label>Country</label>
+                <select name="country" id="country">
+                    <option>Select</option>
+                    <option>London</option>
+                    <option>India</option>
+                    <option>America</option>
+                </select>
+                <div class="error" id="countryErr"></div>
+            </div>
+            <div class="box">
+                <label>Gender</label>
+                <div class="form-inline" id="gender">
+                    <label><input type="radio" name="gender" value="male"> Male</label>
+                    <label><input type="radio" name="gender" value="female">
+                        Female</label>
+                </div>
+                <div class="error" id="genderErr"></div>
+            </div>
+
+            <div class="box">
+                <input type="submit" value="Submit">
+            </div>
+        </form> -->
+    <script src="../js/form.js"></script>
+  </body>
+</html>

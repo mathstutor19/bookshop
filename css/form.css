@@ -1,0 +1,197 @@
+:root {
+  --pink: #e84393;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  overflow-x: hidden;
+  position: relative;
+}
+.shown {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+img {
+  max-width: 100%;
+}
+section {
+  padding: 2rem 9%;
+  background-color: var(--pink);
+}
+main {
+  height: 100vh;
+  width: 100wh;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.input__wrapper {
+  display: flex;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-image: url("../image/iwelcome.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  max-width: 1000px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  margin-top: 50px;
+}
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+.input-box {
+  margin-bottom: 25px;
+  width: calc(100% / 3 - 20px);
+}
+.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+.input-box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: var(--pink);
+}
+.input-radio-box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+  font-size: 16px;
+  display: flex;
+}
+.input-radio-box div div {
+  width: 60px;
+  margin-left: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.input-gift-box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+  font-size: 16px;
+  display: flex;
+  justify-content: space-around;
+}
+.input-gift-box div div {
+  display: flex;
+}
+.input-gift-box div div label {
+  margin-left: 10px;
+}
+.error {
+  font-size: 15px;
+}
+/* }
+form .gender-details .gender-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+form .category {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+form .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+form .category label .dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three {
+  background: #9b59b6;
+  border-color: #d9d9d9;
+}
+form input[type="radio"] {
+  display: none;
+}
+form .button {
+  height: 45px;
+  margin: 35px 0;
+}
+form .button input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+form .button input:hover {
+  /* transform: scale(0.99); */
+/* background: linear-gradient(-135deg, #71b7e6, #9b59b6); */
+/* }  */
