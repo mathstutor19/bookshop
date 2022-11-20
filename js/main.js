@@ -8,10 +8,12 @@ fetch("../books.json")
   .catch(function (err) {
     console.log("error: " + err);
   });
-
+let fragment = document.createDocumentFragment();
 // Header Create
 let bagCount = 0;
-const header = document.querySelector("header");
+// const header = document.querySelector("header");
+const header = document.createElement("header");
+fragment.appendChild(header);
 const headerLink = document.createElement("a");
 const headerSpan = document.createElement("span");
 const headerIcons = document.createElement("div");
@@ -42,9 +44,11 @@ headerIcons.addEventListener("click", function () {
     bag.style.display = "block";
   }
 });
+fragment.appendChild(header);
 
+document.body.appendChild(fragment);
 // Welcome Create
-const main = document.querySelector("main");
+const main = document.createElement("main");
 const welcome = document.createElement("section");
 const welcomeTitle = document.createElement("h2");
 welcome.className = "welcome";
@@ -81,7 +85,9 @@ productsTitle.appendChild(productsTitleSpan);
 const productContainer = document.createElement("div");
 productContainer.className = "product__container";
 products.appendChild(productContainer);
+fragment.appendChild(main);
 
+document.body.appendChild(fragment);
 function books(datas) {
   datas.map((data) => {
     const productCard = document.createElement("div");
@@ -179,23 +185,26 @@ function books(datas) {
       addcontent.appendChild(addRemove);
       totalPrice += data.price;
 
-      orderTotal.innerHTML = ` $ ${totalPrice}`;
+      orderTotal.innerHTML = `Total $ ${totalPrice}`;
       addRemove.onclick = () => {
         bagContainer.remove();
         bagCount--;
         bagCountText.innerHTML = bagCount;
         totalPrice -= data.price;
 
-        orderTotal.innerHTML = `$${totalPrice}`;
+        orderTotal.innerHTML = `Total $${totalPrice}`;
       };
     }
   });
 }
 
 // Footer Create
-const footer = document.querySelector("footer");
+const footer = document.createElement("footer");
 const footerText = document.createElement("p");
 footerText.innerHTML = `created by <span> mr. Bekmirzayev Elmurod </span> | all rights
 reserved`;
 footerText.className = "footer__text";
 footer.appendChild(footerText);
+fragment.appendChild(footer);
+
+document.body.appendChild(fragment);
