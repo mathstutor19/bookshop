@@ -232,6 +232,8 @@ function gitfsText() {
     !gift_pen.checked
   ) {
     errorGifts.textContent = "The Gifts field is invalid";
+  } else {
+    errorGifts.textContent = "";
   }
 }
 function giftsCheck() {
