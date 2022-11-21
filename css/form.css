@@ -142,7 +142,7 @@ form .button button {
   display: none;
 }
 .address__wrapper {
-  background-color: #ccc;
+  background-color: whitesmoke;
   width: 50vw;
   margin: 200px auto;
   text-align: center;
@@ -151,4 +151,8 @@ form .button button {
 }
 .order__created {
   font-size: 30px;
+  margin: 15px 0;
+}
+.order__flat {
+  margin: 10px 0;
 }
