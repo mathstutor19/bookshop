@@ -22,7 +22,7 @@ inputName.addEventListener("keyup", function (event) {
 });
 inputName.addEventListener("blur", function () {
   if (inputName.value == "") {
-    errorName.textContent = "Name is not valid";
+    errorName.textContent = "The name field is invalid";
     inputName.style.borderColor = "red";
     inputNameCheck = false;
     btn();
@@ -52,7 +52,7 @@ inputSurname.addEventListener("keyup", function (event) {
 });
 inputSurname.addEventListener("blur", function () {
   if (inputSurname.value == "") {
-    errorSurname.textContent = "Surname is not valid";
+    errorSurname.textContent = "The Surname field is invalid";
     inputSurname.style.borderColor = "red";
     inputSurnameCheck = false;
     btn();
@@ -80,7 +80,7 @@ inputDate.addEventListener("change", function (event) {
   }
 });
 inputDate.addEventListener("click", function () {
-  errorDate.textContent = "Date is not valid";
+  errorDate.textContent = "The Date field is invalid";
   inputDate.style.borderColor = "red";
   inputDateCheck = false;
   btn();
@@ -106,7 +106,7 @@ inputStreet.addEventListener("keyup", function (event) {
 });
 inputStreet.addEventListener("blur", function () {
   if (inputStreet.value == "") {
-    errorStreet.textContent = "Sreet is not valid";
+    errorStreet.textContent = "The Street field is invalid";
     inputStreet.style.borderColor = "red";
     inputStreetCheck = false;
     btn();
@@ -138,7 +138,7 @@ inputHouse.addEventListener("keyup", function (event) {
 inputHouse.addEventListener("blur", function () {
   if (inputHouse.value == "") {
     inputHouse.style.borderColor = "red";
-    errorHouse.textContent = "House number is not valid";
+    errorHouse.textContent = "The House field is invalid";
     inputHouseCheck = false;
     btn();
   }
@@ -173,7 +173,7 @@ inputFlat.addEventListener("input", function (event) {
 });
 inputFlat.addEventListener("blur", function () {
   if (inputFlat.value == "") {
-    errorFlat.textContent = "Flat number is not valid";
+    errorFlat.textContent = "The Flat field is invalid";
     inputFlatCheck = false;
     btn();
   }
@@ -214,11 +214,26 @@ const gift_pack = document.querySelector(".gift_pack");
 const gift_postcard = document.querySelector(".gift_postcard");
 const gift_discount = document.querySelector(".gift_discount");
 const gift_pen = document.querySelector(".gift_pen");
+let errorGifts = document.querySelector(".error__gifts");
 gift_pack.addEventListener("click", giftsCheck);
 gift_discount.addEventListener("click", giftsCheck);
 gift_postcard.addEventListener("click", giftsCheck);
 gift_pen.addEventListener("click", giftsCheck);
 let giftCount = false;
+gift_pack.addEventListener("blur", gitfsText);
+gift_discount.addEventListener("blur", gitfsText);
+gift_postcard.addEventListener("blur", gitfsText);
+gift_pen.addEventListener("blur", gitfsText);
+function gitfsText() {
+  if (
+    !gift_pack.checked &&
+    !gift_discount.checked &&
+    !gift_postcard.checked &&
+    !gift_pen.checked
+  ) {
+    errorGifts.textContent = "The Gifts field is invalid";
+  }
+}
 function giftsCheck() {
   if (gift_pack.checked && gift_postcard.checked) {
     gift_discount.disabled = true;
@@ -359,4 +374,10 @@ window.onload = function () {
   inputDate.value = "";
   orderBtn.disabled = true;
   orderBtn.textContent = "Fill in form";
+  gift_pack.checked = false;
+  gift_discount.checked = false;
+  gift_postcard.checked = false;
+  gift_pen.checked = false;
+  inputRadioCash.checked = false;
+  inputRadioCard.checked = false;
 };
