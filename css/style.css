@@ -194,6 +194,9 @@ header .logo span {
   font-weight: lighter;
   text-decoration: line-through;
 }
+.heart__color {
+  color: red;
+}
 /* Footer begin  */
 .footer {
   padding: 2rem 9%;

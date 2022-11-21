@@ -110,6 +110,13 @@ function books(datas) {
     productCard.appendChild(productIcons);
     const productHeart = document.createElement("button");
     productHeart.className = "fas fa-heart";
+    productHeart.addEventListener("click", function () {
+      if (productHeart.style.color == "red") {
+        productHeart.style.color = "white";
+      } else {
+        productHeart.style.color = "red";
+      }
+    });
     productIcons.appendChild(productHeart);
     const productCardbtn = document.createElement("button");
     productCardbtn.className = "cart-btn";
