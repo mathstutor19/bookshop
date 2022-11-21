@@ -3,20 +3,17 @@ const inputName = document.querySelector("#name");
 inputNameCheck = false;
 let errorName = document.querySelector(".error__name");
 inputName.addEventListener("keyup", function (event) {
-  errorName.style.color = "red";
-
   if (
-    inputName.value.replace(/\s+/g, "").length > 4 &&
+    inputName.value.replace(/\s+/g, "").length >= 4 &&
     !inputName.value.includes(" ")
   ) {
-    if (/^[A-Za-z]{4,}$/.test(inputName.value)) {
+    if (/^[A-Za-z]{3,}$/.test(inputName.value)) {
       errorName.textContent = "";
       inputName.style.borderColor = "#ccc";
       inputNameCheck = true;
       btn();
     }
   } else {
-    errorName.style.color = "red";
     errorName.textContent = "Name is not valid";
     inputName.style.borderColor = "red";
     inputNameCheck = false;
@@ -25,7 +22,6 @@ inputName.addEventListener("keyup", function (event) {
 });
 inputName.addEventListener("blur", function () {
   if (inputName.value == "") {
-    errorName.style.color = "red";
     errorName.textContent = "Name is not valid";
     inputName.style.borderColor = "red";
     inputNameCheck = false;
@@ -37,9 +33,8 @@ const inputSurname = document.querySelector("#surname");
 let errorSurname = document.querySelector(".error__surname");
 let inputSurnameCheck = false;
 inputSurname.addEventListener("keyup", function (event) {
-  errorSurname.style.color = "red";
   if (
-    inputSurname.value.replace(/\s+/g, "").length > 5 &&
+    inputSurname.value.replace(/\s+/g, "").length >= 5 &&
     !inputSurname.value.includes(" ")
   ) {
     if (/^[A-Za-z]{5,}$/.test(inputSurname.value)) {
@@ -49,7 +44,6 @@ inputSurname.addEventListener("keyup", function (event) {
       btn();
     }
   } else {
-    errorSurname.style.color = "red";
     errorSurname.textContent = "Surname is not valid";
     inputSurname.style.borderColor = "red";
     inputSurnameCheck = false;
@@ -58,7 +52,6 @@ inputSurname.addEventListener("keyup", function (event) {
 });
 inputSurname.addEventListener("blur", function () {
   if (inputSurname.value == "") {
-    errorSurname.style.color = "red";
     errorSurname.textContent = "Surname is not valid";
     inputSurname.style.borderColor = "red";
     inputSurnameCheck = false;
@@ -71,8 +64,6 @@ const inputDate = document.querySelector("#date");
 let errorDate = document.querySelector(".error__date");
 let inputDateCheck = false;
 inputDate.addEventListener("change", function (event) {
-  errorDate.style.color = "red";
-
   if (
     new Date(inputDate.value).getTime() - 24 * 60 * 60 - new Date().getTime() >
     0
@@ -82,7 +73,6 @@ inputDate.addEventListener("change", function (event) {
     inputDateCheck = true;
     btn();
   } else {
-    errorDate.style.color = "red";
     errorDate.textContent = "Date is not valid";
     inputDate.style.borderColor = "red";
     inputDateCheck = false;
@@ -90,7 +80,6 @@ inputDate.addEventListener("change", function (event) {
   }
 });
 inputDate.addEventListener("click", function () {
-  errorDate.style.color = "red";
   errorDate.textContent = "Date is not valid";
   inputDate.style.borderColor = "red";
   inputDateCheck = false;
@@ -101,8 +90,7 @@ const inputStreet = document.querySelector("#street");
 let errorStreet = document.querySelector(".error__street");
 let inputStreetCheck = false;
 inputStreet.addEventListener("keyup", function (event) {
-  errorStreet.style.color = "red";
-  if (inputStreet.value.replace(/\s+/g, "").length > 5) {
+  if (inputStreet.value.replace(/\s+/g, "").length >= 5) {
     if (/^[0-9a-zA-Z\s]{5,}$/.test(inputStreet.value)) {
       errorStreet.textContent = "";
       inputStreet.style.borderColor = "#ccc";
@@ -110,7 +98,6 @@ inputStreet.addEventListener("keyup", function (event) {
       btn();
     }
   } else {
-    errorStreet.style.color = "red";
     errorStreet.textContent = "Sreet is not valid";
     inputStreet.style.borderColor = "red";
     inputStreetCheck = false;
@@ -119,7 +106,6 @@ inputStreet.addEventListener("keyup", function (event) {
 });
 inputStreet.addEventListener("blur", function () {
   if (inputStreet.value == "") {
-    errorStreet.style.color = "red";
     errorStreet.textContent = "Sreet is not valid";
     inputStreet.style.borderColor = "red";
     inputStreetCheck = false;
@@ -131,7 +117,6 @@ const inputHouse = document.querySelector("#house");
 let errorHouse = document.querySelector(".error__house");
 let inputHouseCheck = false;
 inputHouse.addEventListener("keyup", function (event) {
-  errorHouse.style.color = "red";
   if (
     inputHouse.value.replace(/\s+/g, "").length > 0 &&
     !inputHouse.value.includes(" ")
@@ -144,7 +129,6 @@ inputHouse.addEventListener("keyup", function (event) {
       btn();
     }
   } else {
-    errorHouse.style.color = "red";
     inputHouse.style.borderColor = "red";
     errorHouse.textContent = "House number is only positive number";
     inputHouseCheck = false;
@@ -153,7 +137,6 @@ inputHouse.addEventListener("keyup", function (event) {
 });
 inputHouse.addEventListener("blur", function () {
   if (inputHouse.value == "") {
-    errorHouse.style.color = "red";
     inputHouse.style.borderColor = "red";
     errorHouse.textContent = "House number is not valid";
     inputHouseCheck = false;
@@ -164,24 +147,32 @@ inputHouse.addEventListener("blur", function () {
 const inputFlat = document.querySelector("#flat");
 let errorFlat = document.querySelector(".error__flat");
 let inputFlatCheck = false;
-inputFlat.addEventListener("keyup", function (event) {
+inputFlat.addEventListener("input", function (event) {
+  if (
+    inputFlat.value.length === 0 ||
+    !/(?!.*-$)^[1-9]+[-0-9]*$/.test(inputFlat.value)
+  ) {
+    errorFlat.textContent = "Flat number is positive number and Dash";
+    inputFlatCheck = false;
+    btn();
+    console.log("hello");
+  }
   if (inputFlat.value.replace(/\s+/g, "").length > 0) {
     if (/(?!.*-$)^[1-9]+[-0-9]*$/.test(inputFlat.value)) {
       errorFlat.textContent = "";
       inputFlat.style.borderColor = "#ccc";
       inputFlatCheck = true;
       btn();
+      //   console.log(!/^[A-Za-z]*$/.test(inputFlat.value));
     }
   } else {
-    inputFlat.style.borderColor = "red";
-    errorFlat.textContent = "Flat number is only positive number";
+    errorFlat.textContent = "Flat number is positive number and Dash";
     inputFlatCheck = false;
     btn();
   }
 });
 inputFlat.addEventListener("blur", function () {
   if (inputFlat.value == "") {
-    inputFlat.style.borderColor = "red";
     errorFlat.textContent = "Flat number is not valid";
     inputFlatCheck = false;
     btn();
@@ -265,6 +256,18 @@ function giftsCheck() {
     gift_pack.disabled = true;
     gift_pen.disabled = true;
     giftCount = true;
+    btn();
+  }
+  if (
+    gift_pack.checked &&
+    !gift_postcard.checked &&
+    !gift_discount.checked &&
+    !gift_pen.checked
+  ) {
+    gift_postcard.disabled = false;
+    gift_discount.disabled = false;
+    gift_pen.disabled = false;
+    giftCount = false;
     btn();
   }
   if (
